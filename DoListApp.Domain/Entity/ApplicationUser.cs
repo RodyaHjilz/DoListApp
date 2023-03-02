@@ -18,6 +18,6 @@ public class ApplicationUser : IdentityUser
     public string? LastName { get; set; }
     public string? FirstName { get; set; }
 
-
+    // TODO принадлежность к группе
 }
 

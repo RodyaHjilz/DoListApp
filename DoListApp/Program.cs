@@ -3,6 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using DoListApp.DAL;
 using DoListApp.DAL.Data;
 using DoListApp.Domain.Entity;
+using DoListApp.DAL.Interfaces;
+using DoListApp.DAL.Repositories;
+using DoListApp.Services.Interfaces;
+using DoListApp.Services.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
@@ -16,6 +20,10 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IBaseRepository<SimpleTask>, SimpleTaskRepository>();
+builder.Services.AddScoped<ISimpleTaskService, SimpleTaskService>();
+builder.Services.AddScoped<IBaseRepository<ApplicationUser>, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
