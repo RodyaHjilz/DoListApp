@@ -22,7 +22,7 @@ namespace DoListApp.DAL.Repositories
         public async Task Create(SimpleTask entity)
         {
             await context.SimpleTask.AddAsync(entity);
-            await context.SaveChangesAsync();
+            context.SaveChanges();
         }
 
         public async Task Delete(SimpleTask entity)
@@ -45,7 +45,7 @@ namespace DoListApp.DAL.Repositories
                 item.Date = entity.Date;
                 item.Description = entity.Description;
                 context.SimpleTask.Update(item);
-                await context.SaveChangesAsync();
+                context.SaveChanges();
             }
         }
     }

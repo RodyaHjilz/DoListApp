@@ -11,7 +11,7 @@ namespace DoListApp.Services.Interfaces
     public interface IUserService
     {
         // Получить ApplicationUser по ID
-        ApplicationUser? GetUser(string id);
+        ApplicationUser? GetUser(ClaimsPrincipal User);
 
 
 

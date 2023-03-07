@@ -1,0 +1,25 @@
+﻿@model DoListApp.Domain.Entity.SimpleTask;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<div class="col-8">
+    <form method="post", asp-action="CreateOrUpdate" asp-controller="Task">
+        <div class="mb-3">
+            <input type="hidden" asp-for="@Model.Id" />
+            <label class="col-form-label text-black-50">Название задачи:</label>
+            <input asp-for="@Model.Name", class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label class="col-form-label text-black-50">Описание задачи:</label>
+            <textarea class="form-control" asp-for="@Model.Description", rows="3"></textarea>
+        </div>
+
+        <input type="submit", class="btn btn-primary" value="Сохранить"/>
+    </form>
+
+</div>
