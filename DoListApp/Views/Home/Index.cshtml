@@ -27,17 +27,19 @@
                         <th>@Task.Name</th>
                         <th>@Task.Date</th>
                         <td>
-                            <form method="get", asp-action="Update" asp-route-id="@Task.Id">
-                            <input type="submit" class="btn btn-primary" value="Детали" />
+                            <form method="get", asp-action="Update" asp-route-id="@Task.Id" class="d-inline-block mr-1">
+                                <input type="submit" class="btn btn-primary" value="Детали" />
                             </form>
-                            <button type="button" class="btn btn-danger delete-task-button" data-task-id="@Task.Id">Удалить</button>
+                            <form class="d-inline-block">
+                                <button type="button" class="btn btn-danger delete-task-button" data-task-id="@Task.Id">Удалить</button>
+                            </form>
                         </td>
                     </tr>
                 }
             </tbody>
     </table>
     
-
+    
 </div>
 
 @section scripts{

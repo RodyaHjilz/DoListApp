@@ -38,15 +38,12 @@ namespace DoListApp.DAL.Repositories
 
         public async Task Update(SimpleTask entity)
         {
-            var item = context.SimpleTask.FirstOrDefault(task => task.Id == entity.Id);
-            if (item != null)
+            if(entity != null)
             {
-                item.Name = entity.Name;
-                item.Date = entity.Date;
-                item.Description = entity.Description;
-                context.SimpleTask.Update(item);
+                context.SimpleTask.Update(entity);
                 context.SaveChanges();
             }
+
         }
     }
 }
