@@ -24,6 +24,8 @@ builder.Services.AddScoped<IBaseRepository<SimpleTask>, SimpleTaskRepository>();
 builder.Services.AddScoped<ISimpleTaskService, SimpleTaskService>();
 builder.Services.AddScoped<IBaseRepository<ApplicationUser>, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IBaseRepository<UserGroup>, GroupRepository>();
+builder.Services.AddScoped<IGroupService, GroupService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

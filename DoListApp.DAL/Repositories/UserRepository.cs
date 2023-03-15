@@ -33,9 +33,13 @@ namespace DoListApp.DAL.Repositories
             return context.ApplicationUser;
         }
 
-        public Task Update(ApplicationUser entity)
+        public async Task Update(ApplicationUser entity)
         {
-            throw new NotImplementedException();
+            if (entity != null)
+            {
+                context.ApplicationUser.Update(entity);
+                context.SaveChanges();
+            }
         }
     }
 }

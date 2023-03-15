@@ -1,0 +1,17 @@
+﻿@model DoListApp.Domain.Entity.UserGroup;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="col-8">
+    <form class="form-control" method="post" asp-action="Create">
+        <div class="mb-3">
+            <label class="col-form-label text-black-50">Введите название группы:</label>
+            <input asp-for="@Model.Name", class="form-control"/>
+        </div>
+
+        <input type="submit", class="btn btn-primary" value="Сохранить"/>
+    </form>
+</div>

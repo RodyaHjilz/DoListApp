@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,6 +52,7 @@ namespace DoListApp.Services.Implementations
         public IEnumerable<SimpleTask> GetAll(string id)
         {
             var query = taskRepository.GetAll().Where(e => e.User.Id == id);
+
             return query.ToList();
         }
     }

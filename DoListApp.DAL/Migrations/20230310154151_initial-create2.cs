@@ -4,22 +4,22 @@
 
 namespace DoListApp.DAL.Migrations
 {
-    public partial class initialCreate2 : Migration
+    public partial class initialcreate2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "ApplicantId",
+            migrationBuilder.AddColumn<bool>(
+                name: "IsOwner",
                 table: "AspNetUsers",
-                type: "int",
+                type: "bit",
                 nullable: false,
-                defaultValue: 0);
+                defaultValue: false);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "ApplicantId",
+                name: "IsOwner",
                 table: "AspNetUsers");
         }
     }

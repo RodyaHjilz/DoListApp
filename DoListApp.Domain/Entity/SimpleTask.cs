@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoListApp.Domain.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace DoListApp.Domain.Entity
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public string? Description { get; set; }
+        public Priority Priority { get; set; }
+        public bool isDone { get; set; }
         public ApplicationUser? User { get; set; } 
         
     }

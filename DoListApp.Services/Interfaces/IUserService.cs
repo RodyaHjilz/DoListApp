@@ -12,7 +12,7 @@ namespace DoListApp.Services.Interfaces
     {
         // Получить ApplicationUser по ID
         ApplicationUser? GetUser(ClaimsPrincipal User);
-
+        Task JoinGroup(UserGroup group, ApplicationUser user);
 
 
 

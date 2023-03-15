@@ -25,5 +25,13 @@ namespace DoListApp.Services.Implementations
             var id = _userManager.GetUserId(User);
             return _repository.GetAll().FirstOrDefault(e => e.Id == id);
         }
+
+        public Task JoinGroup(UserGroup group, ApplicationUser user)
+        {
+            user.UserGroup = group;
+            _repository.Update(user);
+            return Task.CompletedTask;
+        }
+
     }
 }

@@ -1,11 +1,10 @@
 ﻿@model DoListApp.Domain.Entity.SimpleTask;
-
+@using DoListApp.Domain.Enum;
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
-
 
 <div class="col-8">
     <form method="post", asp-action="CreateOrUpdate" asp-controller="Task">
@@ -18,6 +17,19 @@
             <label class="col-form-label text-black-50">Описание задачи:</label>
             <textarea class="form-control" asp-for="@Model.Description", rows="3"></textarea>
         </div>
+        <div class="mb-3">
+            <label class="col-form-label text-black-50">Дедлайн:</label>
+            <input asp-for="@Model.Date", class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Приоритет задачи</label>
+            <select name="priority" class="form-select mb-3" asp-items="Html.GetEnumSelectList<Priority>()"></select>
+        </div>
+        <div class="mb-3">
+            <label class="col-form-label text-black-50">Выполнено:</label>
+            <input type="checkbox" name="isDone" asp-for="@Model.isDone"/>
+        </div>
+
 
         <input type="submit", class="btn btn-primary" value="Сохранить"/>
     </form>

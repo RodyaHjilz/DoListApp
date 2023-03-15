@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{7E8779
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{49C9B6B6-DACC-4C7F-B75A-BF7EAF562715}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoListApp.Domain", "DoListApp.Domain\DoListApp.Domain.csproj", "{566C0D52-1B39-48FB-95B6-39902D655088}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoListApp.Domain", "DoListApp.Domain\DoListApp.Domain.csproj", "{566C0D52-1B39-48FB-95B6-39902D655088}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoListApp.Services", "DoListApp.Services\DoListApp.Services.csproj", "{D63977EC-A092-4F1D-B18B-EDA6BA5B6DF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoListApp.Services", "DoListApp.Services\DoListApp.Services.csproj", "{D63977EC-A092-4F1D-B18B-EDA6BA5B6DF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
