@@ -11,6 +11,7 @@ namespace DoListApp.Services.Interfaces
     public interface ISimpleTaskService
     {
         IEnumerable <SimpleTask> GetAll(string id);
+        IEnumerable <SimpleTask> GetGroupTask(Guid id);
         SimpleTask? Get(int id);
         Task DeleteTask(int id);
         Task DeleteTask(SimpleTask Task);

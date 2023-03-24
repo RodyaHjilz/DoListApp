@@ -1,11 +1,53 @@
-﻿@*
+﻿
+
+@model DoListApp.Domain.ViewModels.GroupTasksViewModel
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    var tasks = Model.task;
 }
 
+@if(Model.group == null){
 <h1>Group manager</h1>
 <div class="align-content-center">
 <a class="btn btn-primary btn-lg active" asp-action="Join">Войти в группу</a>
 <a class="btn btn-primary btn-lg active" asp-action="Create">Создать группу</a>
 </div>
+}
+else
+{
+    <h1>Группа @Model.group.Name</h1>
+    <p><strong>ID: @Model.group.Id</strong></p>
+    <div class="col-8">
+        <a class="btn btn-primary " asp-action="CreateTask">Добавить групповую задачу</a>
+        <a class="btn btn-danger " asp-action="LeftGroup">Покинуть группу</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Task in tasks)
+                {
+                    <tr id="task-@Task.Id">
+                        <th>@Task.Name</th>
+                        <th>@Task.Date</th>
+                        <td>
+                            <form method="get", asp-action="Update" asp-route-id="@Task.Id" class="d-inline-block mr-1">
+                                <input type="submit" class="btn btn-primary" value="Детали" />
+                            </form>
+                            <form class="d-inline-block">
+                                <button type="button" class="btn btn-danger delete-task-button" data-task-id="@Task.Id">Удалить</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+    </table>
+ </div>
+
+}

@@ -26,12 +26,20 @@ namespace DoListApp.Services.Implementations
             return _repository.GetAll().FirstOrDefault(e => e.Id == id);
         }
 
-        public Task JoinGroup(UserGroup group, ApplicationUser user)
+        public Task JoinGroup(UserGroup group, ApplicationUser user, bool own)
         {
             user.UserGroup = group;
+            user.IsOwner = own;
             _repository.Update(user);
             return Task.CompletedTask;
         }
 
+        public Task LeftGroup(ApplicationUser User)
+        {
+            User.UserGroup = null;
+            User.IsOwner = null;
+            _repository.Update(User);
+            return Task.CompletedTask;
+        }
     }
 }

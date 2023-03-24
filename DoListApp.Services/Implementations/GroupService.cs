@@ -15,11 +15,14 @@ namespace DoListApp.Services.Implementations
     {
         private readonly IBaseRepository<UserGroup> _repository;
         private readonly IUserService _userService;
+        private readonly ISimpleTaskService _taskService;
         public GroupService(IBaseRepository<UserGroup> repository,
-                            IUserService userService)
+                            IUserService userService,
+                            ISimpleTaskService taskService)
         {
             _repository = repository;
             _userService = userService;
+            _taskService = taskService;
         }
 
         public async Task CreateGroup(UserGroup group)
@@ -32,10 +35,12 @@ namespace DoListApp.Services.Implementations
             throw new NotImplementedException();
         }
 
-        //public UserGroup GetUserGroup(ClaimsPrincipal User)
-        //{
+        public UserGroup? GetGroup(Guid id)
+        {
+            var item = _repository.GetAll().FirstOrDefault(e => e.Id == id);
 
-        //}
+            return item;
+        }
 
         public Task UpdateGroup(UserGroup group)
         {

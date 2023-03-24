@@ -15,7 +15,8 @@ namespace DoListApp.Domain.Entity
         public string? Description { get; set; }
         public Priority Priority { get; set; }
         public bool isDone { get; set; }
-        public ApplicationUser? User { get; set; } 
+        public ApplicationUser? User { get; set; }
+        public UserGroup? Group { get; set; }
         
     }
 }

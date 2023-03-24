@@ -16,5 +16,6 @@ namespace DoListApp.Services.Interfaces
         Task CreateGroup(UserGroup group);
         Task UpdateGroup(UserGroup group);
         Task DeleteGroup(UserGroup group);
+        UserGroup? GetGroup(Guid id);
     }
 }

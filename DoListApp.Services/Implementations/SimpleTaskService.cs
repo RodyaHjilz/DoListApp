@@ -55,5 +55,11 @@ namespace DoListApp.Services.Implementations
 
             return query.ToList();
         }
+
+        public IEnumerable<SimpleTask> GetGroupTask(Guid id)
+        {
+            var query = taskRepository.GetAll().Where(e => e.Group.Id == id);
+            return query.ToList();
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using DoListApp.DAL.Data;
 using DoListApp.DAL.Interfaces;
 using DoListApp.Domain.Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace DoListApp.DAL.Repositories
 
         public IQueryable<ApplicationUser> GetAll()
         {
-            return context.ApplicationUser;
+            return context.ApplicationUser.Include(u => u.UserGroup);
         }
 
         public async Task Update(ApplicationUser entity)
